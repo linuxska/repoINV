@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF8"?>
+<pgDesigner Version="1.1.1">
+ <PROJECT Name="inventario" PageFormat="A4" PageOrientation="0" Revision="01/12/2012 23:40:25" Description="Hno Emanuel" Driver="8.4" Author="linuxska" Display="0"/>
+ <TABLE Name="producto" X="17" Y="24" ColorBack="230,230,230" ColorText="0,0,0" ColorBackTitle="230,230,230" ColorBackTitleSelected="76,89,166" ColorForeTitle="0,0,0" ColorForeTitleSelected="255,255,255" Comment="00500072006F0064007500630074006F00200061002000740072006100620061006A00610072" Option="false" PrimaryKey="producto_pk"/>
+ <TABLEFIELD Name="id" Table="producto" Length="0" NullCheck="true" Type1="serial" PrimaryKey="true"/>
+ <TABLEFIELD Name="nombre_comercial" Table="producto" Length="254" NullCheck="true" Type1="character varying" PrimaryKey="false" Comment="004E006F006D006200720065002000640065006C002000700072006F0064007500630074006F"/>
+ <TABLEFIELD Name="formula" Table="producto" Length="254" NullCheck="false" Type1="character varying" PrimaryKey="false" Comment="0046006F0072006D0075006C00610020006400650020006C00610020006D00650064006900630069006E0061002E"/>
+ <TABLEFIELD Name="laboratorio" Table="producto" Length="254" NullCheck="false" Type1="character varying" PrimaryKey="false" Comment="004C00610062006F007200610074006F00720069006F00200071007500650020006C0061002000700072006F0064007500630065007C"/>
+ <TABLEFIELD Name="lote" Table="producto" Length="64" NullCheck="false" Type1="character varying" PrimaryKey="false"/>
+ <TABLEFIELD Name="caducidad" Table="producto" Length="0" NullCheck="false" Type1="date" PrimaryKey="false" Comment="004300610064007500630069006400610064002000640065006C002000700072006F0064007500630074006F"/>
+ <TABLEFIELD Name="piezas" Table="producto" Length="0" NullCheck="false" Type1="int" PrimaryKey="false" Comment="004E0075006D00650072006F0020006400650020007000690065007A00610073"/>
+ <TABLEFIELD Name="arriba" Table="producto" Length="0" NullCheck="false" Type1="int" PrimaryKey="false" Comment="004E0075006D00650072006F0020006400650020007000690065007A00610073002000710075006500200068006100790020006100720072006900620061"/>
+ <TABLEFIELD Name="total" Table="producto" Length="0" NullCheck="false" Type1="int" PrimaryKey="false" Comment="004E0075006D00650072006F0020006400650020007000690065007A006100730020006D006100730020006100720072006900620061002E"/>
+ <TABLEFIELD Name="estante" Table="producto" Length="64" NullCheck="false" Type1="character varying" PrimaryKey="false" Comment="004E0075006D00650072006F00200064006500200065007300740061006E00740065"/>
+ <TABLEFIELD Name="precio" Table="producto" Length="0" NullCheck="false" Type1="float4" PrimaryKey="false"/>
+ <TABLEFIELD Name="codigo_barras" Table="producto" Length="32" NullCheck="false" Type1="character varying" PrimaryKey="false" Comment="0043006F006400690067006F0020006400650020006200610072007200610073002E"/>
+ <TABLEFIELD Name="ubicacion" Table="producto" Length="64" NullCheck="false" Type1="character varying" PrimaryKey="false"/>
+ <TABLEFIELD Name="clase" Table="producto" Length="64" NullCheck="false" Type1="character varying" PrimaryKey="false" Comment="0043006C006100730065"/>
+ <TABLE Name="compra" X="380" Y="6" ColorBack="230,230,230" ColorText="0,0,0" ColorBackTitle="230,230,230" ColorBackTitleSelected="76,89,166" ColorForeTitle="0,0,0" ColorForeTitleSelected="255,255,255" Comment="0043006F006D00700072006100730020007200650061006C0069007A0061006400610073" Option="false" PrimaryKey="compra_pk"/>
+ <TABLEFIELD Name="id" Table="compra" Length="0" NullCheck="true" Type1="serial" PrimaryKey="true"/>
+ <TABLEFIELD Name="fecha" Table="compra" Length="0" NullCheck="false" Type1="date" PrimaryKey="false" Comment="004600650063006800610020006400650020006C006100200063006F006D007000720061"/>
+ <TABLEFIELD Name="id_producto" Table="compra" Length="0" NullCheck="true" Type1="int" PrimaryKey="false" Comment="0069006400200066006F00720061006E0065006F002000640065006C002000700072006F0064007500630074006F002E"/>
+ <TABLEFIELD Name="factura" Table="compra" Length="128" NullCheck="false" Type1="character varying" PrimaryKey="false" Comment="00460061006300740075007200610020006400650020006C006100200063006F006D007000720061"/>
+ <TABLEFIELD Name="remision" Table="compra" Length="64" NullCheck="false" Type1="character varying" PrimaryKey="false" Comment="00520065006D006900730069006F006E0020006400650020006C006100200063006F006D007000720061"/>
+ <TABLEFIELD Name="credito" Table="compra" Length="64" NullCheck="false" Type1="character varying" PrimaryKey="false" Comment="004E0075006D00650072006F0020006400650020006300720065006400690074006F0020006400650020006C006100200063006F006D007000720061"/>
+ <TABLEFIELD Name="piezas" Table="compra" Length="0" NullCheck="false" Type1="int" PrimaryKey="false" Comment="004E0075006D00650072006F0020006400650020007000690065007A00610073002000710075006500200065006E007400720061006E"/>
+ <TABLEFIELD Name="precio_unitario" Table="compra" Length="0" NullCheck="false" Type1="float4" PrimaryKey="false" Comment="00500072006500630069006F00200055006E00690074006100720069006F"/>
+ <TABLEFIELD Name="iva" Table="compra" Length="0" NullCheck="false" Type1="float4" PrimaryKey="false" Comment="004900760061002000640065006C002000700072006F0064007500630074006F"/>
+ <TABLEFIELD Name="total" Table="compra" Length="0" NullCheck="false" Type1="float4" PrimaryKey="false" Comment="0054006F00740061006C0020006400650020006C006100200063006F006D007000720061"/>
+ <TABLEFIELD Name="proveedor" Table="compra" Length="64" NullCheck="false" Type1="character varying" PrimaryKey="false"/>
+ <TABLE Name="venta" X="375" Y="200" ColorBack="230,230,230" ColorText="0,0,0" ColorBackTitle="230,230,230" ColorBackTitleSelected="76,89,166" ColorForeTitle="0,0,0" ColorForeTitleSelected="255,255,255" Comment="005400610062006C0061002000640065002000760065006E007400610073" Option="false"/>
+ <TABLEFIELD Name="id" Table="venta" Length="0" NullCheck="false" Type1="serial" PrimaryKey="false"/>
+ <TABLEFIELD Name="fecha" Table="venta" Length="0" NullCheck="false" Type1="date" PrimaryKey="false" Comment="004600650063006800610020006400650020006C0061002000760065006E00740061002E"/>
+ <TABLEFIELD Name="id_producto" Table="venta" Length="0" NullCheck="false" Type1="int" PrimaryKey="false" Comment="00500072006F0064007500630074006F002000710075006500200073006500200063006F006D00700072006100720061"/>
+ <TABLEFIELD Name="piezas" Table="venta" Length="0" NullCheck="false" Type1="int" PrimaryKey="false" Comment="004E0075006D00650072006F0020006400650020007000690065007A00610073002000640065002000700072006F0064007500630074006F"/>
+ <TABLEFIELD Name="factura" Table="venta" Length="128" NullCheck="false" Type1="character varying" PrimaryKey="false" Comment="004E0075006D00650072006F00200064006500200066006100630074007500720061002E"/>
+ <TABLEFIELD Name="remision" Table="venta" Length="128" NullCheck="false" Type1="character varying" PrimaryKey="false" Comment="004E0075006D00650072006F002000640065002000720065006D006900730069006F006E"/>
+ <TABLEFIELD Name="orden_venta" Table="venta" Length="128" NullCheck="false" Type1="character varying" PrimaryKey="false" Comment="004F007200640065006E002000640065002000760065006E00740061"/>
+ <TABLEFIELD Name="id_destino" Table="venta" Length="0" NullCheck="false" Type1="int" PrimaryKey="false" Comment="00690064005F00640065007300740069006E006F"/>
+ <TABLEFIELD Name="id_responsable" Table="venta" Length="0" NullCheck="false" Type1="int" PrimaryKey="false"/>
+ <TABLEFIELD Name="empresa" Table="venta" Length="64" NullCheck="false" Type1="character varying" PrimaryKey="false"/>
+ <TABLE Name="responsable" X="144" Y="407" ColorBack="230,230,230" ColorText="0,0,0" ColorBackTitle="230,230,230" ColorBackTitleSelected="76,89,166" ColorForeTitle="0,0,0" ColorForeTitleSelected="255,255,255" Option="false" PrimaryKey="responsable_pk"/>
+ <TABLEFIELD Name="id" Table="responsable" Length="0" NullCheck="true" Type1="serial" PrimaryKey="true"/>
+ <TABLEFIELD Name="nombre" Table="responsable" Length="128" NullCheck="false" Type1="character varying" PrimaryKey="false"/>
+ <TABLEFIELD Name="apellidos" Table="responsable" Length="128" NullCheck="false" Type1="character varying" PrimaryKey="false" Comment="004100700065006C006C00690064006F0073"/>
+ <TABLEFIELD Name="telefono" Table="responsable" Length="12" NullCheck="false" Type1="character varying" PrimaryKey="false" Comment="00540065006C00650066006F006E006F00200072006500730070006F006E007300610062006C0065"/>
+ <TABLEFIELD Name="domicilio" Table="responsable" Length="128" NullCheck="false" Type1="character varying" PrimaryKey="false"/>
+ <TABLEFIELD Name="correo_electronico" Table="responsable" Length="128" NullCheck="false" Type1="character varying" PrimaryKey="false"/>
+ <TABLE Name="destino" X="499" Y="412" ColorBack="230,230,230" ColorText="0,0,0" ColorBackTitle="230,230,230" ColorBackTitleSelected="76,89,166" ColorForeTitle="0,0,0" ColorForeTitleSelected="255,255,255" Option="false" PrimaryKey="destino_pk"/>
+ <TABLEFIELD Name="id" Table="destino" Length="0" NullCheck="true" Type1="serial" PrimaryKey="true"/>
+ <TABLEFIELD Name="nombre" Table="destino" Length="128" NullCheck="false" Type1="character varying" PrimaryKey="false"/>
+ <TABLEFIELD Name="telefono" Table="destino" Length="12" NullCheck="false" Type1="character varying" PrimaryKey="false" Comment="00540065006C00650066006F006E006F00200072006500730070006F006E007300610062006C0065"/>
+ <RELATION Name="compra_fkey1" X1="119" Y1="252" X2="530" Y2="6" ColorLine="192,192,192" ColorLineSelected="255,0,0" ColorStartPoint="255,0,0" ColorMiddlePoint="255,0,0" ColorEndPoint="0,-1,0" OnUpdate="CASCADE" OnDelete="RESTRICT" Table1="producto" Table2="compra"/>
+ <RELATIONFIELD Relation="compra_fkey1" Field1="id" Field2="id_producto"/>
+ <RELATION Name="venta_fkey1" X1="305" Y1="523" X2="448" Y2="200" ColorLine="192,192,192" ColorLineSelected="255,0,0" ColorStartPoint="255,0,0" ColorMiddlePoint="255,0,0" ColorEndPoint="0,-1,0" OnUpdate="CASCADE" OnDelete="RESTRICT" Table1="responsable" Table2="venta"/>
+ <RELATIONFIELD Relation="venta_fkey1" Field1="id" Field2="id_responsable"/>
+ <RELATION Name="venta_fkey2" X1="625" Y1="486" X2="522" Y2="200" ColorLine="192,192,192" ColorLineSelected="255,0,0" ColorStartPoint="255,0,0" ColorMiddlePoint="255,0,0" ColorEndPoint="0,-1,0" OnUpdate="CASCADE" OnDelete="RESTRICT" Table1="destino" Table2="venta"/>
+ <RELATIONFIELD Relation="venta_fkey2" Field1="id" Field2="id_destino"/>
+ <RELATION Name="venta_fkey3" X1="222" Y1="252" X2="595" Y2="200" ColorLine="192,192,192" ColorLineSelected="255,0,0" ColorStartPoint="255,0,0" ColorMiddlePoint="255,0,0" ColorEndPoint="0,-1,0" OnUpdate="CASCADE" OnDelete="RESTRICT" Table1="producto" Table2="venta"/>
+ <RELATIONFIELD Relation="venta_fkey3" Field1="id" Field2="id_producto"/>
+</pgDesigner>

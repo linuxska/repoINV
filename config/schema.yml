@@ -1,0 +1,58 @@
+propel:
+  _attributes:
+    package: lib.model
+    defaultIdMethod: native
+  compra:
+    _attributes: { phpName: Compra }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    fecha: { phpName: Fecha, type: DATE, required: false }
+    id_producto: { phpName: IdProducto, type: INTEGER, required: true, foreignTable: producto, foreignReference: id, onDelete: RESTRICT, onUpdate: CASCADE }
+    factura: { phpName: Factura, type: VARCHAR, size: '128', required: false }
+    remision: { phpName: Remision, type: VARCHAR, size: '64', required: false }
+    credito: { phpName: Credito, type: VARCHAR, size: '64', required: false }
+    piezas: { phpName: Piezas, type: INTEGER, required: false }
+    precio_unitario: { phpName: PrecioUnitario, type: VARCHAR, required: false }
+    iva: { phpName: Iva, type: VARCHAR, required: false }
+    total: { phpName: Total, type: VARCHAR, required: false }
+    proveedor: { phpName: Proveedor, type: VARCHAR, size: '64', required: false }
+  destino:
+    _attributes: { phpName: Destino }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    nombre: { phpName: Nombre, type: VARCHAR, size: '128', required: false }
+    telefono: { phpName: Telefono, type: VARCHAR, size: '12', required: false }
+  producto:
+    _attributes: { phpName: Producto }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    nombre_comercial: { phpName: NombreComercial, type: VARCHAR, size: '254', required: true }
+    formula: { phpName: Formula, type: VARCHAR, size: '254', required: false }
+    laboratorio: { phpName: Laboratorio, type: VARCHAR, size: '254', required: false }
+    lote: { phpName: Lote, type: VARCHAR, size: '64', required: false }
+    caducidad: { phpName: Caducidad, type: DATE, required: false }
+    piezas: { phpName: Piezas, type: INTEGER, required: false }
+    arriba: { phpName: Arriba, type: INTEGER, required: false }
+    total: { phpName: Total, type: INTEGER, required: false }
+    estante: { phpName: Estante, type: VARCHAR, size: '64', required: false }
+    precio: { phpName: Precio, type: VARCHAR, required: false }
+    codigo_barras: { phpName: CodigoBarras, type: VARCHAR, size: '32', required: false }
+    ubicacion: { phpName: Ubicacion, type: VARCHAR, size: '64', required: false }
+    clase: { phpName: Clase, type: VARCHAR, size: '64', required: false }
+  responsable:
+    _attributes: { phpName: Responsable }
+    id: { phpName: Id, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    nombre: { phpName: Nombre, type: VARCHAR, size: '128', required: false }
+    apellidos: { phpName: Apellidos, type: VARCHAR, size: '128', required: false }
+    telefono: { phpName: Telefono, type: VARCHAR, size: '12', required: false }
+    domicilio: { phpName: Domicilio, type: VARCHAR, size: '128', required: false }
+    correo_electronico: { phpName: CorreoElectronico, type: VARCHAR, size: '128', required: false }
+  venta:
+    _attributes: { phpName: Venta }
+    id: { phpName: Id, type: INTEGER, autoIncrement: true, required: true }
+    fecha: { phpName: Fecha, type: DATE, required: false }
+    id_producto: { phpName: IdProducto, type: INTEGER, required: false, foreignTable: producto, foreignReference: id, onDelete: RESTRICT, onUpdate: CASCADE }
+    piezas: { phpName: Piezas, type: INTEGER, required: false }
+    factura: { phpName: Factura, type: VARCHAR, size: '128', required: false }
+    remision: { phpName: Remision, type: VARCHAR, size: '128', required: false }
+    orden_venta: { phpName: OrdenVenta, type: VARCHAR, size: '128', required: false }
+    id_destino: { phpName: IdDestino, type: INTEGER, required: false, foreignTable: destino, foreignReference: id, onDelete: RESTRICT, onUpdate: CASCADE }
+    id_responsable: { phpName: IdResponsable, type: INTEGER, required: false, foreignTable: responsable, foreignReference: id, onDelete: RESTRICT, onUpdate: CASCADE }
+    empresa: { phpName: Empresa, type: VARCHAR, size: '64', required: false }
